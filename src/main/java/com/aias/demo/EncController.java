@@ -21,7 +21,7 @@ public class EncController {
         return ResponseEntity.ok(res);
     }
     
-    @GetMapping("/decrypt")
+    @PostMapping("/decrypt")
     public ResponseEntity<?> decrypt(@RequestBody Map<String, String> map) {
         Map<String, Object> res = new HashMap<>();
         res.put("output", JasyptUtils.decrypt(map.get("password"), map.get("input")));
